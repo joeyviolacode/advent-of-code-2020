@@ -4,7 +4,6 @@ test_data = [{"bus": 7, "delay": 0}, {"bus": 11, "delay": 3}, {"bus": 10, "delay
 
 def find_start(bus1, bus2, interval, delay):
     print("Round: " + str(bus1) + " " + str(bus2) + ", interval: " + str(interval))
-    #why is this constant required?
     for i in range(bus1, interval * bus2, interval):
         print("checking: " + str(i))
         if (i + delay) % bus2 == 0:

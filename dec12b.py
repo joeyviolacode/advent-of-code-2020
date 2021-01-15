@@ -39,6 +39,7 @@ def update_ship(ship_ew, ship_ns, waypoint_ew, waypoint_ns, amount):
     return ship_ew, ship_ns, waypoint_ew, waypoint_ns
 
 def rotate_waypoint(ship_ew, ship_ns, waypoint_ew, waypoint_ns, direction, amount):
+    #indicates clockwise rotation in units of 90 degrees
     rotations = {"90": {"L": 3, "R": 1}, "180": {"L": 2, "R": 2}, "270": {"L": 1, "R": 3}}
     this_rotation = rotations[str(amount)][direction]
     ew_delta = waypoint_ew - ship_ew
