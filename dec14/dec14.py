@@ -16,7 +16,6 @@ def apply_mask(bin_num, mask):
 
 def initialize_memory(directions):
     memory = {}
-    mask = ""
     print(directions)
     for direction in directions:
         if direction["address"] == "mask":
@@ -27,4 +26,10 @@ def initialize_memory(directions):
             memory[direction["address"]] = masked_value
     return memory
 
-print(initialize_memory(directions))
+def find_sum_of_memory_values(directions):
+    memory = initialize_memory(directions)
+    mem_values = list(memory.values())
+    mem_values_decimal = [int(num, 2) for num in mem_values]
+    return sum(mem_values_decimal)
+
+print(find_sum_of_memory_values(directions))

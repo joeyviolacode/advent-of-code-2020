@@ -1,6 +1,8 @@
 input = """1000390
 13,x,x,41,x,x,x,x,x,x,x,x,x,997,x,x,x,x,x,x,x,23,x,x,x,x,x,x,x,x,x,x,19,x,x,x,x,x,x,x,x,x,29,x,619,x,x,x,x,x,37,x,x,x,x,x,x,x,x,x,x,17""".split("\n")
 
+# various test inputs
+
 # input = """129080918
 # 1789,37,47,1889""".split("\n")
 # input = """939

@@ -1,7 +1,8 @@
 from dec13_input import schedule_spaced as schedule
 
-test_data = [{"bus": 7, "delay": 0}, {"bus": 11, "delay": 3}, {"bus": 10, "delay": 6}]
-
+# calculates the start point and interval for a pair of primes or prime products such that
+# bus2 - bus1 will always equal the delay when bus1 is multiplied by n * interval for any 
+# positive whole number n
 def find_start(bus1, bus2, interval, delay):
     print("Round: " + str(bus1) + " " + str(bus2) + ", interval: " + str(interval))
     for i in range(bus1, interval * bus2, interval):

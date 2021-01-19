@@ -571,10 +571,10 @@ mem[51640] = 254698
 mem[35556] = 226072
 mem[32355] = 1445""".split("\n")
 
-input = """mask = XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X
-mem[8] = 11
-mem[7] = 101
-mem[8] = 0""".split("\n")
+# input = """mask = XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X
+# mem[8] = 11
+# mem[7] = 101
+# mem[8] = 0""".split("\n")
 
 directions = []
 for line in input:
