@@ -3,7 +3,6 @@ from dec14_input import directions
 def get_binary_list(count):
     return [bin(num)[2:].zfill(count) for num in list(range(2 ** count))]
 
-# incomplete
 def apply_mask(address, mask, bin_str):
     new_bin_str = ""
     for i in range(len(mask)):
