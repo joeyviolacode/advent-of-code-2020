@@ -12,5 +12,3 @@ arrival = int(input[0])
 schedule = [int(num) for num in input[1].split(",") if num != "x"]
 schedule_spaced = input[1].split(",")
 schedule_spaced = [{"bus": int(bus), "delay": index} for index, bus in enumerate(schedule_spaced) if bus != "x"]
-
-print(input)
