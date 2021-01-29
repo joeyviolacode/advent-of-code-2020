@@ -36,7 +36,6 @@ def initialize_memory(directions):
             addresses = get_masked_list(convert_to_bin_str(direction["address"]), mask)
             for address in addresses: 
                 memory[address] = int(direction["value"])
-    print(memory)
     return memory
 
 def find_sum_of_memory_values(directions):
