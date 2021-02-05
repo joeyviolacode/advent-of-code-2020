@@ -25,7 +25,6 @@ def find_2020th(first_turns):
     game = first_turns
     count = initialize_count(game)
     game = build_game(game, count, 30000000)
-    print(len(game))
     return game[-1]
 
 
