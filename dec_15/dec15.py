@@ -2,7 +2,7 @@ first_turns = [0,12,6,13,20,1,17]
 # first_turns = [0, 3, 6]
 
 def calculate_next(num, turn, counts):
-    if num in counts:
+    if num in counts.keys():
         next_num = turn - counts[num]
     else:
         next_num = 0
@@ -15,14 +15,18 @@ def initialize_count(game):
         counts[num] = turn + 1    
     return counts
 
-def build_game():
-    pass
+def build_game(game, count, final_turn):
+    while len(game) < final_turn:
+        next_num, count = calculate_next(game[-1], len(game), count)
+        game.append(next_num)
+    return game
 
 def find_2020th(first_turns):
     game = first_turns
-    next_turn = len(game)
     count = initialize_count(game)
-    print(calculate_next(0, 8, count))
+    game = build_game(game, count, 30000000)
+    print(len(game))
+    return game[-1]
 
 
 
