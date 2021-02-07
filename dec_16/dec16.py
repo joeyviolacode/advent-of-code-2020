@@ -9,9 +9,17 @@ def build_valid_list(ranges):
                 valid_nums.append(num)
     return valid_nums
 
-def find_exceptions_total(ranges):
-    valid_list = build_valid_list(ranges)
+def find_exceptions(valid_list, tickets):
     exceptions = []
-    
+    for ticket in tickets:
+        exceptions += [num for num in ticket if num not in valid_list]
+    return exceptions
 
-print(build_valid_list(ranges))
+
+def find_exceptions_total(ranges, tickets):
+    valid_list = build_valid_list(ranges)
+    exceptions = find_exceptions(valid_list, tickets)
+    return sum(exceptions)
+
+# print(build_valid_list(ranges))
+print(find_exceptions_total(ranges, other_tickets_int))
