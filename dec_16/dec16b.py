@@ -19,13 +19,19 @@ def get_test_ranges(range_pair):
     return ( list(range(range_pair[0][0], range_pair[0][1] + 1)) + 
              list(range(range_pair[1][0], range_pair[1][1] + 1)) )
 
+def test_against_ranges(range_pair, num):
+    return int(num >= range_pair[0][0] and num <= range_pair[0][1] + 1 or 
+                num >= range_pair[1][0] and  num <= range_pair[1][1])
+
 def build_tests(ranges_grouped):
     test_ranges = []
     for range_pair in ranges_grouped:
         test_ranges.append(get_test_ranges(range_pair))
     return test_ranges
 
-
+def check_field_against_rule(range_pair, other_tickets_int, position):
+    range_pair[0][0] and range_pair[0][1] + 1)) + 
+             list(range(range_pair[1][0], range_pair[1][1] + 1
 
 def find_categories():
     valid_tickets = discard_invalid_tickets(other_tickets_int, ranges_list)
