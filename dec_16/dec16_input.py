@@ -270,15 +270,22 @@ nearby tickets:
 
 rules_raw = input[0].split("\n")
 rules_no_colons = [rule.split(": ")[1] for rule in rules_raw]
+rule_names = [rule.split(": ")[0] for rule in rules_raw]
 ranges_list = []
 for rule in rules_no_colons:
     ranges = rule.split(" or ")
     for _range in ranges:
         split_range = _range.split("-")
-        ranges_list.append((int(split_range[0]), int(split_range[1])))        
+        ranges_list.append((int(split_range[0]), int(split_range[1]))) 
 
+ranges_grouped = []
+for rule in rules_no_colons:
+    ranges = rule.split(" or ")
+    range1 = ranges[0].split("-")
+    range2 = ranges[1].split("-")
+    ranges_grouped.append( [(int(range1[0]), int(range1[1])), ((int(range2[0])), int(range2[1])) ] )
 
-my_ticket = input[1]
+my_ticket = [int(item) for item in input[1].split("\n")[1].split(",")]
 
 
 other_tickets_str = input[2].split("\n")[1:]
@@ -286,6 +293,6 @@ other_tickets_int =  [[int(thing) for thing in stuff] for stuff in [item.split("
 
 
 # print(rules)
-# print(my_ticket)
+# print(rule_names)
 # print(other_tickets_int)
 # print(rules_no_colons)
